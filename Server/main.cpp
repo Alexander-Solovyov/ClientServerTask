@@ -36,7 +36,6 @@ void processUDP(int port)
         data = serverUDP.getMessage();
         if (data->getMessage(message))
         {
-            std::cout << message << std::endl;
             data->sendBack(message);
             delete[] message;
         }
@@ -61,7 +60,6 @@ void processTCP(int port)
         
         while (connection->getMessage(message))
         {
-            std::cout << message << std::endl;
             connection->sendMessage(message);
             delete[] message;
         }
